@@ -10,24 +10,24 @@ stages:
     outs:
     - path: data
       hash: md5
-      md5: 31707006af99bc71a251a3e2f560e47e.dir
-      size: 115465
-      nfiles: 3
+      md5: 9cd46cba1b8791d1f334f1006be81ef5.dir
+      size: 57785
+      nfiles: 1
   build:
     cmd: python ./stages/build.py
     deps:
     - path: ./stages/build.py
       hash: md5
-      md5: 9422047c11f9811be63d2a8581ecceab
-      size: 1033
+      md5: 492ec0b5894bf5dec6fa4d0885830158
+      size: 1487
     - path: data
       hash: md5
-      md5: 31707006af99bc71a251a3e2f560e47e.dir
-      size: 115465
-      nfiles: 3
+      md5: 9cd46cba1b8791d1f334f1006be81ef5.dir
+      size: 57785
+      nfiles: 1
     outs:
     - path: brick
       hash: md5
-      md5: 81d7f327be6f2364dd40e073657169cf.dir
-      size: 68481
-      nfiles: 3
+      md5: a235def0197a0b05b5001c660aacb50b.dir
+      size: 34181
+      nfiles: 1

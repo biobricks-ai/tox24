@@ -26,3 +26,4 @@ for file_name in os.listdir(data_folder):
         print(f"Converted {csv_file_path} to {parquet_file_path}")
 
 print("All CSV files have been converted to Parquet format and saved in the 'brick' subfolder.")
+
