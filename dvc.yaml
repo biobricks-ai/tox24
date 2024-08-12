@@ -1,15 +1,21 @@
 stages:
+
+  status:
+    cmd: python ./stages/00_status.py
+    outs:
+      - status.md5
+
   download:
-    cmd: ./stages/download.sh
+    cmd: ./stages/01_download.sh
     deps:
-      - ./stages/download.sh
+      - ./stages/01_download.sh
     outs:
       - data
 
   build:
-    cmd: python ./stages/build.py
+    cmd: python ./stages/02_build.py
     deps:
-      - ./stages/build.py
+      - ./stages/02_build.py
       - data
     outs:
       - brick

@@ -1,33 +1,40 @@
 schema: '2.0'
 stages:
   download:
-    cmd: ./stages/download.sh
+    cmd: ./stages/01_download.sh
     deps:
-    - path: ./stages/download.sh
+    - path: ./stages/01_download.sh
       hash: md5
-      md5: 401fd840e0ac0cf4e6250a4f309c2f7e
-      size: 358
+      md5: b8982b17f1232b16378a7d2502fcd1f3
+      size: 380
     outs:
     - path: data
       hash: md5
-      md5: 9cd46cba1b8791d1f334f1006be81ef5.dir
-      size: 57785
-      nfiles: 1
+      md5: 12f34bca9bf48af6aecc25520b7053e2.dir
+      size: 115578
+      nfiles: 3
   build:
-    cmd: python ./stages/build.py
+    cmd: python ./stages/02_build.py
     deps:
-    - path: ./stages/build.py
+    - path: ./stages/02_build.py
       hash: md5
-      md5: 492ec0b5894bf5dec6fa4d0885830158
-      size: 1487
+      md5: c005be9ad10ab3e6da0af75c4e0db411
+      size: 1034
     - path: data
       hash: md5
-      md5: 9cd46cba1b8791d1f334f1006be81ef5.dir
-      size: 57785
-      nfiles: 1
+      md5: 12f34bca9bf48af6aecc25520b7053e2.dir
+      size: 115578
+      nfiles: 3
     outs:
     - path: brick
       hash: md5
-      md5: a235def0197a0b05b5001c660aacb50b.dir
-      size: 34181
-      nfiles: 1
+      md5: a0f013d377c3237f40dfce48b0e94404.dir
+      size: 70646
+      nfiles: 3
+  status:
+    cmd: python ./stages/00_status.py
+    outs:
+    - path: status.md5
+      hash: md5
+      md5: 8b00bcb2cf75b6bbbc40d1f704ae0548
+      size: 32
